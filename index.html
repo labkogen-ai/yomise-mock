@@ -333,6 +333,17 @@ body{
 .ri-night svg{stroke:var(--indigo);}
 .ri-access{background:#f0e8d4;}
 .ri-access svg{stroke:var(--gold);}
+.ri-train{background:#dce4f0;}
+.ri-train svg{stroke:var(--indigo);}
+.ri-car{background:#f0e8d4;}
+.ri-car svg{stroke:var(--gold);}
+.route-gmaps-tag{
+  font-size:10px;font-weight:700;
+  color:var(--indigo);
+  background:#dce4f0;
+  padding:2px 7px;border-radius:10px;
+  white-space:nowrap;
+}
 .route-body{flex:1;}
 .route-title{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:2px;}
 .route-desc{font-size:11px;color:var(--ink-light);line-height:1.45;}
@@ -695,20 +706,18 @@ body{
 
   <!-- ブロック1: 明るい / MAP + カテゴリ -->
   <div class="block-light pb16">
-    <!-- MAP -->
+    <!-- MAP: 実際のGoogle Maps埋め込み -->
     <div class="map-block">
-      <div class="map-mock">
-        <div class="map-mock-bg"></div>
-        <div class="mroad mr1"></div><div class="mroad mr2"></div>
-        <div class="mroad mr3"></div><div class="mroad mr4"></div><div class="mroad mr5"></div>
-        <div class="mpark"></div>
-        <div class="mroute"><div class="mroute-line"></div></div>
-        <div class="mpin mp1"></div><div class="mpin mp2"></div><div class="mpin mp3"></div>
-        <div class="mstation">🚉 日暮里駅</div>
+      <div style="width:100%;height:180px;overflow:hidden;border-radius:10px 10px 0 0;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1621.8!2d139.7643794!3d35.7290302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188e8d3b71f4b7%3A0x7b6b0b0b0b0b0b0b!2z44KI44G_44Gb6YCa5ZCI6KGM!5e0!3m2!1sja!2sjp!4v1234567890"
+          width="100%" height="180" style="border:0;display:block;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
       <div class="map-footer">
         <span class="map-footer-text">よみせ通り周辺エリア</span>
-        <button class="map-open-btn">
+        <button class="map-open-btn" onclick="window.open('https://www.google.com/maps/search/%E3%82%88%E3%81%BF%E3%81%9B%E9%80%9A%E3%82%8A%E5%95%86%E5%BA%97%E8%A1%97/@35.7290302,139.7643794,17z','_blank')">
           <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           Googleマップで開く
         </button>
@@ -742,45 +751,66 @@ body{
     </div>
   </div>
 
-  <!-- ブロック2: 暗い / 目的別おすすめルート -->
+  <!-- ブロック2: ウォームベージュ / 目的別おすすめルート -->
   <div class="block-dark pb20">
     <div class="sect-head">
       <div class="sect-title-dark">目的別おすすめルート</div>
       <a class="sect-more-dark">一覧へ ›</a>
     </div>
     <div class="route-list">
-      <div class="route-card">
-        <div class="route-icon ri-eat"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg></div>
-        <div class="route-body">
-          <div class="route-title">谷根千 食べ歩きルート</div>
-          <div class="route-desc">名物グルメを巡る下町散策コース</div>
-        </div>
-        <span class="route-badge">30分</span>
-      </div>
-      <div class="route-card">
-        <div class="route-icon ri-walk"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 22v-7l-2-3H6l2-7h8l1 4"/><path d="M14 22v-7l2-2"/></svg></div>
+
+      <!-- 観光ルート -->
+      <div class="route-card" onclick="window.open('https://www.google.com/maps/dir/%E3%82%88%E3%81%BF%E3%81%9B%E9%80%9A%E3%82%8A%E5%95%86%E5%BA%97%E8%A1%97/%E8%B0%B7%E4%B8%AD%E9%8A%80%E5%BA%A7/%E8%B0%B7%E4%B8%AD%E9%9C%8A%E5%9C%92/%E6%A0%B9%E6%B4%A5%E7%A5%9E%E7%A4%BE/@35.725,139.762,15z','_blank')">
+        <div class="route-icon ri-walk"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 19l-1-6-3 3H4l4-6 4-2 4 2 4 6h-4l-3-3-1 6z"/></svg></div>
         <div class="route-body">
           <div class="route-title">谷根千めぐり 観光ルート</div>
-          <div class="route-desc">カフェ・雑貨・歴史スポットを満喫</div>
+          <div class="route-desc">よみせ通り → 谷中銀座 → 谷中霊園 → 根津神社</div>
         </div>
-        <span class="route-badge">60分</span>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;">
+          <span class="route-badge">約60分</span>
+          <span class="route-gmaps-tag">🗺 地図で見る</span>
+        </div>
       </div>
-      <div class="route-card">
-        <div class="route-icon ri-night"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/></svg></div>
+
+      <!-- 日暮里から -->
+      <div class="route-card" onclick="window.open('https://www.google.com/maps/dir/%E6%97%A5%E6%9A%AE%E9%87%8C%E9%A7%85/%E8%B0%B7%E4%B8%AD%E9%8A%80%E5%BA%A7/%E3%82%88%E3%81%BF%E3%81%9B%E9%80%9A%E3%82%8A%E5%95%86%E5%BA%97%E8%A1%97/@35.727,139.770,15z/data=!4m2!4m1!3e2','_blank')">
+        <div class="route-icon ri-train"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="14" rx="3"/><path d="M9 19l-2 2"/><path d="M15 19l2 2"/><line x1="12" y1="19" x2="12" y2="21"/><circle cx="8.5" cy="11" r="1.5" fill="currentColor" stroke="none"/><circle cx="15.5" cy="11" r="1.5" fill="currentColor" stroke="none"/><line x1="4" y1="8" x2="20" y2="8"/></svg></div>
         <div class="route-body">
-          <div class="route-title">夜のはしご酒ルート</div>
-          <div class="route-desc">歴史ある路地を歩きながらお酒を楽しむ</div>
+          <div class="route-title">日暮里駅から（徒歩）</div>
+          <div class="route-desc">日暮里駅 → 谷中銀座 → よみせ通り</div>
         </div>
-        <span class="route-badge">40分</span>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;">
+          <span class="route-badge">約15分</span>
+          <span class="route-gmaps-tag">🗺 経路案内</span>
+        </div>
       </div>
-      <div class="route-card">
-        <div class="route-icon ri-access"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div>
+
+      <!-- 千駄木から -->
+      <div class="route-card" onclick="window.open('https://www.google.com/maps/dir/%E5%8D%83%E9%A7%84%E6%9C%A8%E9%A7%85/%E3%82%88%E3%81%BF%E3%81%9B%E9%80%9A%E3%82%8A%E5%95%86%E5%BA%97%E8%A1%97/@35.724,139.762,15z/data=!4m2!4m1!3e2','_blank')">
+        <div class="route-icon ri-train"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="14" rx="3"/><path d="M9 19l-2 2"/><path d="M15 19l2 2"/><line x1="12" y1="19" x2="12" y2="21"/><circle cx="8.5" cy="11" r="1.5" fill="currentColor" stroke="none"/><circle cx="15.5" cy="11" r="1.5" fill="currentColor" stroke="none"/><line x1="4" y1="8" x2="20" y2="8"/></svg></div>
         <div class="route-body">
-          <div class="route-title">アクセス＊目的別ルート</div>
-          <div class="route-desc">日暮里駅 / 千駄木駅 / 車で有料駐車場</div>
+          <div class="route-title">千駄木駅から（徒歩）</div>
+          <div class="route-desc">千駄木駅 → よみせ通り商店街</div>
         </div>
-        <span class="route-badge">案内</span>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;">
+          <span class="route-badge">約5分</span>
+          <span class="route-gmaps-tag">🗺 経路案内</span>
+        </div>
       </div>
+
+      <!-- 車で -->
+      <div class="route-card" onclick="window.open('https://www.google.com/maps/search/%E3%82%88%E3%81%BF%E3%81%9B%E9%80%9A%E3%82%8A+%E9%A7%90%E8%BB%8A%E5%A0%B4/@35.729,139.764,17z','_blank')">
+        <div class="route-icon ri-car"><svg viewBox="0 0 24 24"><path d="M5 17H3a2 2 0 01-2-2V9a2 2 0 012-2h1l2-4h10l2 4h1a2 2 0 012 2v6a2 2 0 01-2 2h-2"/><circle cx="7.5" cy="17" r="2.5"/><circle cx="16.5" cy="17" r="2.5"/><path d="M7.5 14.5h9"/></svg></div>
+        <div class="route-body">
+          <div class="route-title">車でお越しの方</div>
+          <div class="route-desc">よみせ通り周辺の有料駐車場をご利用ください</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;">
+          <span class="route-badge">P 案内</span>
+          <span class="route-gmaps-tag">🗺 駐車場を探す</span>
+        </div>
+      </div>
+
     </div>
   </div>
 

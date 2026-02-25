@@ -5,768 +5,682 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>よみせ通り商店街</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
 <style>
 :root {
-  --vermilion: #b84c2b;
-  --vermilion-light: #c9614a;
-  --vermilion-dark: #8f3820;
-  --cream: #f2ead8;
-  --cream-dark: #e8dcc4;
-  --ink: #2a2218;
-  --ink-mid: #4a3f32;
-  --ink-light: #7a6e60;
-  --stone: #9e9488;
-  --stone-light: #c8bfb0;
-  --moss: #4e6245;
-  --indigo: #2e3f6a;
-  --gold: #a08840;
-  --white: #faf7f0;
-  --shadow: rgba(42,34,24,0.12);
+  --red: #c94030;
+  --red-light: #e05040;
+  --red-dark: #9e2e22;
+  --teal: #2a8c7e;
+  --teal-light: #3aaa9a;
+  --indigo: #2e4070;
+  --gold: #9a7830;
+  --cream: #faf6ee;
+  --cream2: #f2ebe0;
+  --warm-bg: #ede3d0;
+  --warm-bg2: #e4d8c4;
+  --mid-bg: #d8ccb4;
+  --ink: #1e1810;
+  --ink-mid: #3a3028;
+  --ink-light: #6a5e50;
+  --stone: #9a8e80;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 6px rgba(30,20,10,0.10);
+  --shadow-md: 0 3px 14px rgba(30,20,10,0.13);
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-body {
-  font-family: 'Noto Sans JP', sans-serif;
-  background: #e8e0ce;
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 0;
-}
-
-/* ===== PHONE FRAME ===== */
-.phone-frame {
-  width: 390px;
-  min-height: 100vh;
-  background: var(--cream);
-  position: relative;
-  overflow: hidden;
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  background:#c8c0b0;
+  display:flex;justify-content:center;
+  min-height:100vh;
 }
 
-/* ===== SCREENS ===== */
-.screen {
-  display: none;
-  flex-direction: column;
-  min-height: 100vh;
-  padding-bottom: 72px;
-}
-.screen.active { display: flex; }
-
-/* ===== HEADER ===== */
-.header {
-  background: var(--vermilion);
-  padding: 10px 14px 9px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  border-bottom: 2px solid var(--vermilion-dark);
-}
-.logo-wrap {
-  display: flex;
-  flex-direction: column;
-}
-.logo-en {
-  font-size: 9px;
-  color: rgba(255,255,255,0.7);
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  margin-bottom: 1px;
-}
-.logo-jp {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 20px;
-  font-weight: 900;
-  color: #fff;
-  letter-spacing: 1px;
-  line-height: 1;
-}
-.header-menu {
-  width: 36px; height: 36px;
-  background: rgba(0,0,0,0.2);
-  border-radius: 4px;
-  border: 1px solid rgba(255,255,255,0.25);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  gap: 5px; cursor: pointer;
-}
-.header-menu span {
-  display: block; width: 18px; height: 1.5px;
-  background: rgba(255,255,255,0.9);
-}
-.header-back {
-  display: flex; align-items: center; gap: 6px;
-  cursor: pointer; background: none; border: none;
-  color: rgba(255,255,255,0.9);
-  font-family: inherit; font-size: 13px; font-weight: 600;
-}
-.header-back svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
-
-/* ===== HERO STRIP ===== */
-.hero-strip {
-  background: var(--vermilion);
-  padding: 0 14px 12px;
-}
-.hero-img {
-  width: 100%; height: 140px;
-  background:
-    linear-gradient(to bottom, rgba(30,20,10,0.3), rgba(10,6,2,0.55)),
-    url('https://images.unsplash.com/photo-1480796927426-f609979314bd?w=800') center/cover;
-  border-radius: 0 0 8px 8px;
-  display: flex; align-items: flex-end;
-  padding: 10px 12px;
-}
-.hero-catch {
-  color: rgba(255,255,255,0.92);
-  font-family: 'Noto Serif JP', serif;
-  font-size: 13px; font-weight: 700;
-  letter-spacing: 0.5px; line-height: 1.6;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.5);
-}
-.hero-catch strong {
-  display: block; font-size: 17px;
-  color: #fff; margin-bottom: 2px;
+.phone{
+  width:390px;
+  min-height:100vh;
+  background:var(--cream);
+  position:relative;
+  overflow:hidden;
 }
 
-/* ===== SEARCH AREA ===== */
-.search-area {
-  background: var(--vermilion);
-  padding: 0 14px 14px;
-}
-.search-label-bar {
-  background: rgba(0,0,0,0.2);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 24px;
-  padding: 7px 12px;
-  color: rgba(255,255,255,0.9);
-  font-size: 13px; font-weight: 700;
-  text-align: center;
-  margin-bottom: 9px;
-  letter-spacing: 0.5px;
-}
-.search-btns {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
-}
-.sbtn {
-  border: none; border-radius: 6px;
-  padding: 11px 6px;
-  font-family: inherit; font-size: 13px; font-weight: 700;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center; gap: 7px;
-  transition: filter 0.15s;
-}
-.sbtn:active { filter: brightness(0.88); }
-.sbtn-loc {
-  background: var(--cream);
-  color: var(--vermilion-dark);
-  border: 1px solid rgba(255,255,255,0.5);
-}
-.sbtn-cat {
-  background: var(--indigo);
-  color: rgba(255,255,255,0.95);
-}
-.sbtn svg {
-  width: 16px; height: 16px; flex-shrink: 0;
-  stroke: currentColor; fill: none; stroke-width: 2;
+/* ======= SCREEN SYSTEM ======= */
+.screen{display:none;flex-direction:column;min-height:100vh;padding-bottom:72px;}
+.screen.active{display:flex;}
+
+/* ======= HEADER ======= */
+.header{
+  background:var(--white);
+  padding:10px 14px 10px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:50;
+  border-bottom:1px solid #ede8e0;
+  box-shadow:0 1px 8px rgba(30,20,10,0.07);
 }
 
-/* ===== SECTION ===== */
-.sect {
-  padding: 16px 14px 0;
+/* LOGO - よみせ文字遊び */
+.logo-block{display:flex;flex-direction:column;gap:1px;}
+.logo-en{font-size:8px;color:var(--stone);font-weight:500;letter-spacing:2px;text-transform:uppercase;}
+.logo-jp{
+  display:flex;align-items:baseline;gap:0;
+  line-height:1;
 }
-.sect-head {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 10px;
+.logo-yo{
+  font-family:'Zen Maru Gothic',sans-serif;
+  font-size:28px;font-weight:900;
+  color:var(--red);
+  letter-spacing:-1px;
+  transform:rotate(-3deg);
+  display:inline-block;
 }
-.sect-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 15px; font-weight: 700;
-  color: var(--ink); letter-spacing: 0.5px;
-  display: flex; align-items: center; gap: 7px;
+.logo-mi{
+  font-family:'Zen Maru Gothic',sans-serif;
+  font-size:22px;font-weight:900;
+  color:var(--ink);
+  transform:translateY(2px);
+  display:inline-block;
+  margin-left:1px;
 }
-.sect-title::before {
-  content: '';
-  display: block; width: 4px; height: 16px;
-  background: var(--vermilion);
-  border-radius: 2px;
+.logo-se{
+  font-family:'Zen Maru Gothic',sans-serif;
+  font-size:25px;font-weight:900;
+  color:var(--red);
+  transform:rotate(2deg) translateY(-1px);
+  display:inline-block;
+  margin-left:1px;
 }
-.sect-more {
-  font-size: 12px; font-weight: 600;
-  color: var(--ink-light); cursor: pointer;
-  text-decoration: none;
-  border-bottom: 1px solid var(--stone-light);
-  padding-bottom: 1px;
+.logo-dori{
+  font-family:'Noto Serif JP',serif;
+  font-size:13px;font-weight:700;
+  color:var(--ink-mid);
+  margin-left:3px;
+  transform:translateY(2px);
+  display:inline-block;
 }
-
-/* ===== MAP AREA ===== */
-.map-block {
-  margin: 14px 14px 0;
-  border-radius: 8px; overflow: hidden;
-  border: 1px solid var(--cream-dark);
-  box-shadow: 0 2px 10px var(--shadow);
-  position: relative;
-}
-.map-mock {
-  width: 100%; height: 170px;
-  background: #ddd8ce;
-  position: relative; overflow: hidden;
-}
-.map-mock-bg {
-  position: absolute; inset: 0;
-  background: #d8d0c0;
-}
-.map-road { position: absolute; background: #ece8df; }
-.mr1 { width: 100%; height: 7px; top: 44%; left: 0; }
-.mr2 { width: 100%; height: 5px; top: 64%; opacity: 0.7; }
-.mr3 { width: 5px; height: 100%; left: 32%; }
-.mr4 { width: 3px; height: 100%; left: 62%; opacity: 0.7; }
-.mr5 { width: 3px; height: 100%; left: 82%; opacity: 0.5; }
-.mr6 { width: 220px; height: 5px; top: 15%; left: -20px; transform: rotate(22deg); opacity: 0.6; }
-.map-park {
-  position: absolute; top: 50%; left: 40%;
-  width: 60px; height: 40px;
-  background: #c8d0b0; opacity: 0.5; border-radius: 4px;
-}
-.map-block-color {
-  position: absolute; width: 28px; height: 20px;
-  background: rgba(180,160,130,0.4); border-radius: 2px;
-}
-.mb1 { top: 20%; left: 10%; }
-.mb2 { top: 25%; left: 50%; }
-.mb3 { top: 60%; left: 70%; }
-.map-route {
-  position: absolute; top: 32%; left: 8%;
-  width: 75%; height: 4px;
-}
-.map-route-line {
-  width: 100%; height: 100%;
-  background: repeating-linear-gradient(90deg, var(--indigo) 0 10px, transparent 10px 18px);
-  border-radius: 2px; transform: rotate(6deg);
-  opacity: 0.7;
-}
-.map-pin {
-  position: absolute;
-  width: 22px; height: 22px;
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(-45deg);
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-}
-.map-pin::after { content: ''; width: 9px; height: 9px; background: #fff; border-radius: 50%; }
-.mp1 { top: 28%; left: 26%; background: var(--vermilion); }
-.mp2 { top: 18%; left: 42%; background: var(--vermilion); }
-.mp3 { top: 36%; left: 58%; background: var(--moss); }
-.map-station {
-  position: absolute; top: 8px; right: 10px;
-  background: rgba(250,247,240,0.88);
-  border-radius: 4px; padding: 2px 7px;
-  font-size: 9px; font-weight: 700; color: var(--ink);
-  border: 1px solid var(--stone-light);
-}
-.map-footer {
-  background: var(--white);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 9px 12px;
-}
-.map-footer-text {
-  font-size: 11px; color: var(--ink-light); font-weight: 500;
-}
-.map-open-btn {
-  background: var(--indigo);
-  color: #fff; font-family: inherit;
-  font-size: 11px; font-weight: 700;
-  border: none; border-radius: 4px;
-  padding: 5px 10px; cursor: pointer;
-  display: flex; align-items: center; gap: 5px;
-}
-.map-open-btn svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; }
-
-/* ===== CATEGORY GRID ===== */
-.cat-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
-}
-.cat-item {
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
-  background: none; border: none; cursor: pointer;
-  padding: 4px 0; font-family: inherit;
-  transition: transform 0.15s;
-}
-.cat-item:active { transform: scale(0.91); }
-.cat-icon-wrap {
-  width: 52px; height: 52px; border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  border: 1.5px solid rgba(0,0,0,0.08);
-}
-.cat-icon-wrap svg { width: 24px; height: 24px; }
-.ci-food { background: #e8d8cc; }
-.ci-food svg { stroke: var(--vermilion-dark); fill: none; stroke-width: 1.8; }
-.ci-shop { background: #ccd4e0; }
-.ci-shop svg { stroke: var(--indigo); fill: none; stroke-width: 1.8; }
-.ci-svc { background: #cfdaca; }
-.ci-svc svg { stroke: var(--moss); fill: none; stroke-width: 1.8; }
-.ci-place { background: #d8d4c0; }
-.ci-place svg { stroke: var(--gold); fill: none; stroke-width: 1.8; }
-.cat-label {
-  font-size: 10px; font-weight: 700;
-  color: var(--ink-mid); text-align: center; line-height: 1.35;
+.logo-shoten{
+  font-family:'Noto Serif JP',serif;
+  font-size:10px;font-weight:700;
+  color:var(--stone);
+  letter-spacing:0.5px;
+  margin-top:1px;
 }
 
-/* ===== ROUTE CARDS ===== */
-.route-list { display: flex; flex-direction: column; gap: 8px; }
-.route-card {
-  background: var(--white);
-  border-radius: 8px;
-  border: 1px solid var(--cream-dark);
-  padding: 12px 14px;
-  display: flex; align-items: center; gap: 12px;
-  cursor: pointer; box-shadow: 0 1px 6px var(--shadow);
-  transition: transform 0.15s;
+.header-right{display:flex;align-items:center;gap:8px;}
+.header-lang{
+  font-size:10px;font-weight:700;color:var(--indigo);
+  border:1px solid var(--indigo);border-radius:4px;
+  padding:3px 7px;cursor:pointer;background:none;font-family:inherit;
 }
-.route-card:active { transform: scale(0.98); }
-.route-card-icon {
-  width: 42px; height: 42px; border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  border: 1px solid rgba(0,0,0,0.07);
+.header-menu{
+  width:34px;height:34px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  cursor:pointer;background:none;border:none;
 }
-.route-card-icon svg { width: 22px; height: 22px; stroke-width: 1.8; fill: none; }
-.ri-food { background: #f0e4d8; }
-.ri-food svg { stroke: var(--vermilion-dark); }
-.ri-cafe { background: #e0e8d8; }
-.ri-cafe svg { stroke: var(--moss); }
-.ri-night { background: #d4d8e8; }
-.ri-night svg { stroke: var(--indigo); }
-.route-card-body { flex: 1; }
-.route-card-title { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
-.route-card-desc { font-size: 11px; color: var(--ink-light); line-height: 1.45; }
-.route-badge {
-  background: var(--cream-dark);
-  color: var(--ink-mid);
-  font-size: 11px; font-weight: 700;
-  padding: 3px 9px; border-radius: 20px;
-  flex-shrink: 0;
-  border: 1px solid var(--stone-light);
+.header-menu span{display:block;width:18px;height:1.5px;background:var(--ink-mid);}
+.header-back{
+  display:flex;align-items:center;gap:5px;
+  background:none;border:none;cursor:pointer;
+  font-family:inherit;font-size:13px;font-weight:700;color:var(--ink-mid);
+}
+.header-back svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;}
+
+/* ======= HERO / MAIN VISUAL ======= */
+.hero-wrap{
+  background:var(--white);
+  padding:0;
+  position:relative;
+  overflow:hidden;
+}
+.hero-img{
+  width:100%;height:200px;
+  position:relative;overflow:hidden;
+  background:#c8d4e0;
+}
+.hero-img img{
+  position:absolute;top:0;left:0;
+  width:100%;
+  object-fit:cover;object-position:center top;
+}
+.hero-img::after{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(255,255,255,0) 50%,rgba(250,246,238,0.9) 100%);
+  z-index:1;
+}
+.hero-catch{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:10px 16px 12px;
+  z-index:2;
+}
+.hero-catch-main{
+  font-family:'Noto Serif JP',serif;
+  font-size:18px;font-weight:900;
+  color:var(--ink);
+  letter-spacing:0.5px;
+  display:block;margin-bottom:2px;
+}
+.hero-catch-sub{
+  font-size:11px;color:var(--ink-light);font-weight:500;
+  letter-spacing:0.3px;
 }
 
-/* ===== SHOP CARDS ===== */
-.shop-tabs {
-  display: flex; gap: 0;
-  background: var(--cream-dark);
-  border-radius: 6px; padding: 3px;
-  margin-bottom: 10px;
+/* ======= SEARCH ======= */
+.search-wrap{
+  background:var(--white);
+  padding:12px 14px 14px;
+  border-bottom:1px solid #ede8e0;
 }
-.stab {
-  flex: 1; border: none; background: none;
-  font-family: inherit; font-size: 11px; font-weight: 700;
-  color: var(--stone); cursor: pointer;
-  padding: 7px 4px; border-radius: 4px;
-  transition: all 0.2s;
+.search-label{
+  text-align:center;
+  font-size:12px;font-weight:700;color:var(--ink-light);
+  margin-bottom:9px;letter-spacing:0.5px;
 }
-.stab.active { background: var(--white); color: var(--vermilion-dark); box-shadow: 0 1px 4px var(--shadow); }
+.search-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.sbtn{
+  border:none;border-radius:8px;
+  padding:12px 6px;
+  font-family:inherit;font-size:13px;font-weight:700;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  transition:filter .15s;
+}
+.sbtn:active{filter:brightness(.88);}
+.sbtn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0;}
+.sbtn-loc{background:var(--red);color:#fff;}
+.sbtn-cat{background:var(--teal);color:#fff;}
 
-.shop-list { display: flex; flex-direction: column; gap: 8px; }
-.shop-card {
-  background: var(--white);
-  border-radius: 8px;
-  border: 1px solid var(--cream-dark);
-  display: flex; overflow: hidden;
-  cursor: pointer; box-shadow: 0 1px 6px var(--shadow);
-  transition: transform 0.15s;
-}
-.shop-card:active { transform: scale(0.98); }
-.shop-thumb {
-  width: 88px; height: 80px; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 11px; color: var(--stone);
-  font-weight: 600; text-align: center;
-  line-height: 1.4;
-}
-.thumb-waraku { background: #e8dfd0; color: var(--ink-mid); }
-.shop-info {
-  flex: 1; padding: 9px 12px 9px 10px;
-  display: flex; flex-direction: column; justify-content: space-between;
-}
-.shop-info-top {}
-.shop-name-row {
-  display: flex; justify-content: space-between; align-items: flex-start;
-}
-.shop-name {
-  font-size: 14px; font-weight: 700; color: var(--ink);
-  line-height: 1.3; font-family: 'Noto Serif JP', serif;
-}
-.shop-dist {
-  font-size: 10px; color: var(--stone);
-  font-weight: 600; white-space: nowrap;
-  padding-top: 2px;
-}
-.shop-genre { font-size: 11px; color: var(--ink-light); margin-top: 2px; }
-.shop-info-bot {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-top: 7px;
-}
-.status-open {
-  font-size: 11px; font-weight: 700;
-  background: #e4eed8; color: var(--moss);
-  padding: 2px 9px; border-radius: 20px;
-  border: 1px solid #c0d4a8;
-}
-.status-closed {
-  font-size: 11px; font-weight: 700;
-  background: var(--cream-dark); color: var(--stone);
-  padding: 2px 9px; border-radius: 20px;
-  border: 1px solid var(--stone-light);
-}
-.shop-arrow { color: var(--stone); font-size: 14px; }
+/* ======= SECTION BLOCKS ======= */
+/* 明るいブロック */
+.block-light{background:var(--cream);padding:20px 14px 0;}
+/* ウォームベージュブロック（旧ダーク） */
+.block-dark{background:var(--warm-bg);padding:20px 14px 0;}
+/* やや濃いウォームブロック（旧ダーク2） */
+.block-dark2{background:var(--warm-bg2);padding:20px 14px 0;}
 
-/* ===== NEWS ===== */
-.news-block {
-  background: var(--white);
-  border-radius: 8px; border: 1px solid var(--cream-dark);
-  box-shadow: 0 1px 6px var(--shadow);
-  overflow: hidden;
+.sect-title-light{
+  font-family:'Noto Serif JP',serif;
+  font-size:16px;font-weight:900;color:var(--ink);
+  display:flex;align-items:center;gap:8px;
+  margin-bottom:12px;
 }
-.news-row {
-  padding: 11px 13px;
-  border-bottom: 1px solid var(--cream-dark);
-  display: flex; gap: 8px; align-items: flex-start;
-  cursor: pointer; transition: background 0.15s;
+.sect-title-light::before{
+  content:'';display:block;width:4px;height:18px;
+  background:var(--red);border-radius:2px;
 }
-.news-row:last-child { border-bottom: none; }
-.news-row:active { background: var(--cream); }
-.news-date { font-size: 10px; color: var(--stone); font-weight: 600; white-space: nowrap; min-width: 52px; padding-top: 2px; }
-.ntag {
-  font-size: 10px; font-weight: 700;
-  padding: 1px 7px; border-radius: 10px;
-  white-space: nowrap; flex-shrink: 0;
-  height: fit-content; margin-top: 1px;
+.sect-title-dark{
+  font-family:'Noto Serif JP',serif;
+  font-size:16px;font-weight:900;
+  color:var(--ink);
+  display:flex;align-items:center;gap:8px;
+  margin-bottom:12px;
 }
-.nt-new { background: #e0e8d8; color: var(--moss); }
-.nt-event { background: #f0e4d8; color: var(--vermilion-dark); }
-.nt-info { background: #dce0ea; color: var(--indigo); }
-.news-title { font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--ink-mid); }
-
-/* ===== FOOTER ===== */
-.footer {
-  background: var(--ink);
-  padding: 18px 14px 20px;
-  margin-top: 20px;
+.sect-title-dark::before{
+  content:'';display:block;width:4px;height:18px;
+  background:var(--red);border-radius:2px;
 }
-.footer-logo {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 16px; font-weight: 700;
-  color: rgba(255,255,255,0.9);
-  margin-bottom: 12px;
-  display: flex; align-items: center; gap: 10px;
+.sect-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.sect-more-light{
+  font-size:12px;font-weight:600;color:var(--teal);
+  cursor:pointer;text-decoration:none;
+  border-bottom:1px solid var(--teal);padding-bottom:1px;
 }
-.footer-logo-sub { font-size: 9px; color: rgba(255,255,255,0.5); font-weight: 400; }
-.footer-links {
-  display: flex; flex-wrap: wrap; gap: 2px 0;
-  margin-bottom: 12px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 12px;
-}
-.flink {
-  font-size: 10px; color: rgba(255,255,255,0.6);
-}
-.flink::after { content: '　|　'; color: rgba(255,255,255,0.2); }
-.flink:last-child::after { content: ''; }
-.footer-copy {
-  font-size: 10px; color: rgba(255,255,255,0.35);
-  text-align: center; padding-top: 10px;
-  border-top: 1px solid rgba(255,255,255,0.08);
+.sect-more-dark{
+  font-size:12px;font-weight:600;color:var(--teal);
+  cursor:pointer;border-bottom:1px solid var(--teal);padding-bottom:1px;
 }
 
-/* ===== BOTTOM NAV ===== */
-.bottom-nav {
-  position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
-  width: 390px;
-  background: var(--white);
-  border-top: 1px solid var(--cream-dark);
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  padding: 4px 0 10px;
-  z-index: 100;
-  box-shadow: 0 -3px 14px rgba(42,34,24,0.1);
+/* ======= MAP ======= */
+.map-block{
+  border-radius:10px;overflow:hidden;
+  border:1px solid #e0d8c8;
+  box-shadow:var(--shadow-md);
+  margin-bottom:6px;
 }
-.nav-btn {
-  display: flex; flex-direction: column; align-items: center; gap: 3px;
-  background: none; border: none; cursor: pointer; padding: 6px 4px 2px;
-  font-family: inherit; transition: opacity 0.15s;
+.map-mock{
+  width:100%;height:165px;background:#d8d0c0;
+  position:relative;overflow:hidden;
 }
-.nav-btn:active { opacity: 0.6; }
-.nav-icon-wrap {
-  width: 28px; height: 28px; border-radius: 6px;
-  display: flex; align-items: center; justify-content: center;
+.map-mock-bg{position:absolute;inset:0;background:#d4ccba;}
+.mroad{position:absolute;background:#ece8df;}
+.mr1{width:100%;height:7px;top:44%;}
+.mr2{width:100%;height:4px;top:64%;opacity:.7;}
+.mr3{width:5px;height:100%;left:32%;}
+.mr4{width:3px;height:100%;left:62%;opacity:.7;}
+.mr5{width:220px;height:5px;top:15%;left:-20px;transform:rotate(22deg);opacity:.6;}
+.mpark{position:absolute;top:50%;left:40%;width:55px;height:38px;background:#c4cc9e;opacity:.5;border-radius:4px;}
+.mpin{
+  position:absolute;width:22px;height:22px;
+  border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+  box-shadow:0 2px 5px rgba(0,0,0,.2);
+  display:flex;align-items:center;justify-content:center;
 }
-.nav-icon-wrap svg { width: 18px; height: 18px; stroke-width: 1.8; fill: none; }
-.nav-lbl { font-size: 10px; font-weight: 700; color: var(--stone); }
-.nav-btn.active .nav-icon-wrap { background: #f0e4d8; }
-.nav-btn.active .nav-icon-wrap svg { stroke: var(--vermilion-dark); }
-.nav-btn.active .nav-lbl { color: var(--vermilion-dark); }
-.nav-btn:not(.active) .nav-icon-wrap svg { stroke: var(--stone); }
+.mpin::after{content:'';width:9px;height:9px;background:#fff;border-radius:50%;}
+.mp1{top:28%;left:26%;background:var(--red);}
+.mp2{top:18%;left:44%;background:var(--red);}
+.mp3{top:36%;left:60%;background:var(--teal);}
+.mroute{position:absolute;top:32%;left:8%;width:70%;height:4px;}
+.mroute-line{
+  width:100%;height:100%;
+  background:repeating-linear-gradient(90deg,var(--indigo) 0 10px,transparent 10px 18px);
+  border-radius:2px;transform:rotate(5deg);opacity:.65;
+}
+.mstation{
+  position:absolute;top:8px;right:10px;
+  background:rgba(250,246,238,.9);border-radius:4px;
+  padding:2px 7px;font-size:9px;font-weight:700;color:var(--ink);
+  border:1px solid #d8d0c0;
+}
+.map-footer{
+  background:var(--white);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:9px 12px;
+}
+.map-footer-text{font-size:11px;color:var(--ink-light);font-weight:500;}
+.map-open-btn{
+  background:var(--indigo);color:#fff;
+  font-family:inherit;font-size:11px;font-weight:700;
+  border:none;border-radius:5px;padding:5px 10px;cursor:pointer;
+  display:flex;align-items:center;gap:5px;
+}
+.map-open-btn svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2;}
 
-/* ===== DETAIL PAGE ===== */
-.detail-hero {
-  width: 100%; height: 200px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 60px;
-  background: linear-gradient(160deg, #e8dfd0 0%, #d8cdb8 100%);
-  position: relative;
-  overflow: hidden;
+/* ======= CAT GRID ======= */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.cat-item{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  background:none;border:none;cursor:pointer;padding:4px 0;
+  font-family:inherit;transition:transform .15s;
 }
-.detail-hero::after {
-  content: '和の器';
-  position: absolute; bottom: 0; right: 0;
-  font-family: 'Noto Serif JP', serif;
-  font-size: 48px; font-weight: 900;
-  color: rgba(100,80,60,0.08);
-  padding: 10px 14px;
-  letter-spacing: 4px;
+.cat-item:active{transform:scale(.91);}
+.cat-icon{
+  width:54px;height:54px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  border:1.5px solid rgba(0,0,0,.06);
 }
-.detail-hero-badge {
-  position: absolute; top: 12px; right: 12px;
-  background: var(--white); border-radius: 20px;
-  padding: 4px 10px;
-  font-size: 11px; font-weight: 700;
-  border: 1px solid var(--cream-dark);
-  display: flex; align-items: center; gap: 4px;
-}
-.badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--moss); }
-.detail-header {
-  background: var(--white);
-  padding: 14px 14px 12px;
-  border-bottom: 1px solid var(--cream-dark);
-}
-.detail-cat-tag {
-  font-size: 10px; font-weight: 700;
-  background: #ccd4e0; color: var(--indigo);
-  padding: 2px 9px; border-radius: 20px;
-  display: inline-block; margin-bottom: 7px;
-}
-.detail-name {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 22px; font-weight: 900;
-  color: var(--ink); line-height: 1.2; margin-bottom: 4px;
-}
-.detail-sub { font-size: 12px; color: var(--stone); font-weight: 500; }
-.detail-rating {
-  display: flex; align-items: center; gap: 8px; margin-top: 8px;
-}
-.stars { color: var(--gold); font-size: 14px; letter-spacing: 1px; }
-.rating-num { font-size: 13px; font-weight: 700; color: var(--ink-mid); }
-.review-count { font-size: 11px; color: var(--stone); }
+.cat-icon svg{width:24px;height:24px;stroke-width:1.8;fill:none;}
+.ci-food{background:#f8e8e0;}
+.ci-food svg{stroke:var(--red-dark);}
+.ci-shop{background:#e0e8d8;}
+.ci-shop svg{stroke:var(--teal);}
+.ci-svc{background:#dce4f0;}
+.ci-svc svg{stroke:var(--indigo);}
+.ci-place{background:#f0e8d0;}
+.ci-place svg{stroke:var(--gold);}
+.cat-label{font-size:10px;font-weight:700;color:var(--ink-mid);text-align:center;line-height:1.35;}
 
-.detail-actions {
-  padding: 12px 14px;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
-  background: var(--white);
-  border-bottom: 1px solid var(--cream-dark);
+/* ======= ROUTE CARDS (warm bg) ======= */
+.route-list{display:flex;flex-direction:column;gap:8px;}
+.route-card{
+  background:var(--white);
+  border:1px solid rgba(0,0,0,0.08);
+  border-radius:10px;padding:12px 14px;
+  display:flex;align-items:center;gap:12px;
+  cursor:pointer;box-shadow:var(--shadow-sm);transition:transform .15s;
 }
-.act-btn {
-  display: flex; flex-direction: column; align-items: center; gap: 5px;
-  border: 1.5px solid var(--cream-dark); border-radius: 8px;
-  padding: 10px 4px; cursor: pointer; background: var(--cream);
-  transition: background 0.15s; font-family: inherit;
+.route-card:active{transform:scale(.98);}
+.route-icon{
+  width:44px;height:44px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  border:1px solid rgba(0,0,0,0.07);
 }
-.act-btn:active { background: var(--cream-dark); }
-.act-btn svg { width: 20px; height: 20px; stroke: var(--ink-mid); fill: none; stroke-width: 1.8; }
-.act-label { font-size: 10px; font-weight: 700; color: var(--ink-mid); }
-.act-btn.highlight {
-  background: var(--vermilion);
-  border-color: var(--vermilion-dark);
-}
-.act-btn.highlight svg { stroke: #fff; }
-.act-btn.highlight .act-label { color: #fff; }
-
-.detail-gmaps {
-  margin: 12px 14px;
-  border-radius: 8px; overflow: hidden;
-  border: 1.5px solid var(--indigo);
-  cursor: pointer; transition: opacity 0.15s;
-}
-.detail-gmaps:active { opacity: 0.85; }
-.gmaps-inner {
-  background: linear-gradient(135deg, #2e3f6a 0%, #1c2845 100%);
-  padding: 12px 14px;
-  display: flex; align-items: center; gap: 10px;
-}
-.gmaps-logo {
-  width: 36px; height: 36px; border-radius: 8px;
-  background: var(--white); display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
-.gmaps-logo svg { width: 22px; height: 22px; }
-.gmaps-text { flex: 1; }
-.gmaps-title { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 2px; }
-.gmaps-sub { font-size: 10px; color: rgba(255,255,255,0.65); }
-.gmaps-arrow { color: rgba(255,255,255,0.6); font-size: 18px; }
-
-.detail-info-block {
-  margin: 0 14px 0; background: var(--white);
-  border-radius: 8px; border: 1px solid var(--cream-dark);
-  overflow: hidden; box-shadow: 0 1px 6px var(--shadow);
-}
-.info-row {
-  display: flex; padding: 11px 13px;
-  border-bottom: 1px solid var(--cream-dark); align-items: flex-start;
-  gap: 10px;
-}
-.info-row:last-child { border-bottom: none; }
-.info-label {
-  font-size: 10px; font-weight: 700; color: var(--stone);
-  min-width: 48px; padding-top: 1px; flex-shrink: 0;
-}
-.info-val { font-size: 12px; color: var(--ink-mid); font-weight: 500; line-height: 1.5; }
-.info-val a { color: var(--indigo); text-decoration: underline; }
-
-.detail-desc {
-  margin: 12px 14px 0;
-  background: var(--white);
-  border-radius: 8px; border: 1px solid var(--cream-dark);
-  padding: 13px 14px; box-shadow: 0 1px 6px var(--shadow);
-}
-.detail-desc-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 13px; font-weight: 700; color: var(--ink);
-  margin-bottom: 8px; padding-bottom: 7px;
-  border-bottom: 1px solid var(--cream-dark);
-}
-.detail-desc-body {
-  font-size: 12px; color: var(--ink-mid); line-height: 1.8;
+.route-icon svg{width:22px;height:22px;stroke-width:1.8;fill:none;}
+.ri-eat{background:#f8e8e0;}
+.ri-eat svg{stroke:var(--red-dark);}
+.ri-walk{background:#e0ede8;}
+.ri-walk svg{stroke:var(--teal);}
+.ri-night{background:#dce4f0;}
+.ri-night svg{stroke:var(--indigo);}
+.ri-access{background:#f0e8d4;}
+.ri-access svg{stroke:var(--gold);}
+.route-body{flex:1;}
+.route-title{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:2px;}
+.route-desc{font-size:11px;color:var(--ink-light);line-height:1.45;}
+.route-badge{
+  background:var(--cream2);
+  color:var(--ink-mid);
+  font-size:11px;font-weight:700;
+  padding:3px 10px;border-radius:20px;flex-shrink:0;
+  border:1px solid #d8d0c0;
 }
 
-.nearby-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 15px; font-weight: 700; color: var(--ink);
-  display: flex; align-items: center; gap: 7px;
-  margin-bottom: 10px;
+/* ======= SHOP CARDS ======= */
+.shop-tabs{
+  display:flex;gap:0;background:#e4ddd0;border-radius:7px;padding:3px;gap:3px;margin-bottom:10px;
 }
-.nearby-title::before {
-  content: ''; display: block; width: 4px; height: 16px;
-  background: var(--indigo); border-radius: 2px;
+.stab{
+  flex:1;border:none;background:none;
+  font-family:inherit;font-size:11px;font-weight:700;color:var(--stone);
+  cursor:pointer;padding:7px 4px;border-radius:5px;transition:all .2s;
 }
-.nearby-scroll {
-  display: flex; gap: 10px; overflow-x: auto;
-  padding-bottom: 6px; scrollbar-width: none;
-}
-.nearby-scroll::-webkit-scrollbar { display: none; }
-.nearby-card {
-  min-width: 140px; background: var(--white);
-  border-radius: 8px; border: 1px solid var(--cream-dark);
-  overflow: hidden; cursor: pointer; flex-shrink: 0;
-  box-shadow: 0 1px 6px var(--shadow);
-  transition: transform 0.15s;
-}
-.nearby-card:active { transform: scale(0.96); }
-.nearby-thumb {
-  width: 100%; height: 80px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 13px; font-weight: 700; color: var(--stone);
-}
-.nt1 { background: #f0e4d8; }
-.nt2 { background: #e0e8d8; }
-.nt3 { background: #dce0ea; }
-.nearby-info { padding: 8px 10px 10px; }
-.nearby-name { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
-.nearby-genre { font-size: 10px; color: var(--stone); }
-.nearby-dist { font-size: 10px; color: var(--ink-light); font-weight: 600; margin-top: 4px; }
+.stab.active{background:var(--white);color:var(--red-dark);box-shadow:var(--shadow-sm);}
 
-/* ===== CATEGORY PAGE ===== */
-.cat-page-tabs {
-  display: flex; background: var(--cream-dark);
-  padding: 4px; gap: 4px; margin: 12px 14px;
-  border-radius: 8px;
+.shop-list{display:flex;flex-direction:column;gap:8px;}
+.shop-card{
+  background:var(--white);
+  border-radius:10px;border:1px solid #e8e0d0;
+  display:flex;overflow:hidden;cursor:pointer;
+  box-shadow:var(--shadow-sm);transition:transform .15s;
 }
-.cptab {
-  flex: 1; border: none; border-radius: 5px;
-  font-family: inherit; font-size: 11px; font-weight: 700;
-  padding: 8px 4px; cursor: pointer;
-  color: var(--stone); background: none;
-  transition: all 0.2s;
+.shop-card:active{transform:scale(.98);}
+.shop-thumb{
+  width:88px;height:82px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;color:var(--stone);
+  text-align:center;line-height:1.4;
 }
-.cptab.active { background: var(--white); color: var(--vermilion-dark); box-shadow: 0 1px 4px var(--shadow); }
+.st-waraku{background:#ede4d4;}
+.st-nobi{background:#f4e8de;}
+.st-cibi{background:#dce8e4;}
+.shop-info{flex:1;padding:9px 12px 9px 10px;display:flex;flex-direction:column;justify-content:space-between;}
+.shop-name-row{display:flex;justify-content:space-between;align-items:flex-start;}
+.shop-name{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--ink);line-height:1.3;}
+.shop-dist{font-size:10px;color:var(--stone);font-weight:600;white-space:nowrap;padding-top:2px;}
+.shop-genre{font-size:11px;color:var(--ink-light);margin-top:2px;}
+.shop-foot{display:flex;align-items:center;justify-content:space-between;margin-top:6px;}
+.s-open{font-size:11px;font-weight:700;background:#e8f4e8;color:#2a7a3a;padding:2px 9px;border-radius:20px;border:1px solid #c0dcc0;}
+.s-closed{font-size:11px;font-weight:700;background:#f0ede8;color:var(--stone);padding:2px 9px;border-radius:20px;border:1px solid #d8d0c4;}
+.shop-arrow{color:var(--stone);font-size:16px;}
 
-.cat-filter-row {
-  display: flex; gap: 7px; margin: 0 14px 12px;
-  overflow-x: auto; scrollbar-width: none; padding-bottom: 2px;
+/* ======= NEWS ======= */
+.news-block{
+  background:var(--white);
+  border:1px solid #e8e0d0;
+  border-radius:10px;overflow:hidden;
+  box-shadow:var(--shadow-sm);
 }
-.cat-filter-row::-webkit-scrollbar { display: none; }
-.cfchip {
-  white-space: nowrap; border: 1.5px solid var(--stone-light);
-  background: var(--white); border-radius: 20px;
-  padding: 5px 12px; font-family: inherit;
-  font-size: 11px; font-weight: 700; color: var(--stone);
-  cursor: pointer; transition: all 0.2s; flex-shrink: 0;
+.news-row{
+  padding:11px 13px;border-bottom:1px solid #f0ece4;
+  display:flex;gap:8px;align-items:flex-start;cursor:pointer;transition:background .15s;
 }
-.cfchip.active {
-  background: var(--vermilion); border-color: var(--vermilion-dark);
-  color: #fff;
-}
+.news-row:last-child{border-bottom:none;}
+.news-row:active{background:var(--cream);}
+.news-date{font-size:10px;color:var(--stone);font-weight:600;white-space:nowrap;min-width:52px;padding-top:2px;}
+.ntag{font-size:10px;font-weight:700;padding:1px 8px;border-radius:10px;white-space:nowrap;flex-shrink:0;height:fit-content;margin-top:1px;}
+.nt-new{background:#e0ede8;color:var(--teal);}
+.nt-event{background:#f8e8e0;color:var(--red-dark);}
+.nt-info{background:#dce4f0;color:var(--indigo);}
+.news-title{font-size:12px;font-weight:500;line-height:1.5;color:var(--ink-mid);}
 
-.cat-shop-list { display: flex; flex-direction: column; gap: 8px; padding: 0 14px; }
-.cat-shop-card {
-  background: var(--white);
-  border: 1px solid var(--cream-dark);
-  border-radius: 8px; overflow: hidden;
-  display: flex; cursor: pointer;
-  box-shadow: 0 1px 6px var(--shadow);
-  transition: transform 0.15s;
-}
-.cat-shop-card:active { transform: scale(0.98); }
-.csc-thumb {
-  width: 90px; height: 88px; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 12px; font-weight: 700; color: var(--stone); text-align: center; line-height: 1.4;
-}
-.csct1 { background: #e8dfd0; }
-.csct2 { background: #f0e4d8; }
-.csct3 { background: #dce0ea; }
-.csct4 { background: #e0e8d8; }
-.csc-info { flex: 1; padding: 10px 12px 10px 10px; display: flex; flex-direction: column; justify-content: space-between; }
-.csc-name {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 2px;
-}
-.csc-genre { font-size: 11px; color: var(--ink-light); margin-bottom: 4px; }
-.csc-tags { display: flex; flex-wrap: wrap; gap: 4px; }
-.csc-tag {
-  font-size: 10px; color: var(--indigo);
-  background: #dce0ea; padding: 1px 7px; border-radius: 10px; font-weight: 600;
-}
-.csc-foot { display: flex; align-items: center; justify-content: space-between; }
+/* ======= BLOCK PADDING BOTTOM ======= */
+.pb16{padding-bottom:16px;}
+.pb20{padding-bottom:20px;}
 
-/* ===== ANIM ===== */
-@keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
-.shop-card { animation: fadeUp 0.35s ease both; }
-.shop-card:nth-child(1) { animation-delay: 0.04s; }
-.shop-card:nth-child(2) { animation-delay: 0.1s; }
-.shop-card:nth-child(3) { animation-delay: 0.16s; }
+/* ======= FOOTER ======= */
+.footer{
+  background:var(--ink-mid);padding:16px 14px 18px;
+}
+.footer-logo{
+  font-family:'Noto Serif JP',serif;
+  font-size:15px;font-weight:700;color:rgba(255,255,255,.85);
+  margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;
+}
+.footer-logo-sub{font-size:9px;color:rgba(255,255,255,.4);font-weight:400;letter-spacing:1px;}
+.footer-links{
+  display:none;
+}
+.flink{font-size:10px;color:rgba(255,255,255,.55);}
+.flink::after{content:'　|　';color:rgba(255,255,255,.2);}
+.flink:last-child::after{content:'';}
+.footer-copy{font-size:10px;color:rgba(255,255,255,.35);text-align:center;padding-top:8px;border-top:1px solid rgba(255,255,255,.1);}
+
+/* ======= BOTTOM NAV ======= */
+.bottom-nav{
+  position:fixed;bottom:0;left:50%;transform:translateX(-50%);
+  width:390px;background:var(--white);
+  border-top:1px solid #e8e0d0;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  padding:4px 0 10px;z-index:100;
+  box-shadow:0 -3px 14px rgba(30,20,10,0.10);
+}
+.nav-btn{
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  background:none;border:none;cursor:pointer;padding:6px 4px 2px;
+  font-family:inherit;transition:opacity .15s;
+}
+.nav-btn:active{opacity:.6;}
+.nav-iw{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;}
+.nav-iw svg{width:18px;height:18px;stroke-width:1.8;fill:none;}
+.nav-lbl{font-size:10px;font-weight:700;color:var(--stone);}
+.nav-btn.active .nav-iw{background:#fce8e4;}
+.nav-btn.active .nav-iw svg{stroke:var(--red-dark);}
+.nav-btn.active .nav-lbl{color:var(--red-dark);}
+.nav-btn:not(.active) .nav-iw svg{stroke:var(--stone);}
+
+/* ======= DETAIL PAGE ======= */
+.detail-hero{
+  width:100%;height:220px;
+  background:linear-gradient(160deg,#ede4d4 0%,#d8ccb8 100%);
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.detail-hero-bg-text{
+  position:absolute;
+  font-family:'Noto Serif JP',serif;
+  font-size:60px;font-weight:900;
+  color:rgba(100,80,55,0.07);
+  letter-spacing:6px;white-space:nowrap;
+  bottom:10px;right:-10px;
+}
+.detail-hero-icon{font-size:64px;z-index:1;position:relative;}
+.detail-hero-badge{
+  position:absolute;top:12px;right:12px;
+  background:var(--white);border-radius:20px;
+  padding:4px 10px;font-size:11px;font-weight:700;
+  border:1px solid #e8e0d0;
+  display:flex;align-items:center;gap:5px;
+}
+.badge-open{width:7px;height:7px;border-radius:50%;background:#3a9a4a;}
+.detail-head{
+  background:var(--white);
+  padding:14px 14px 12px;
+  border-bottom:1px solid #ede8e0;
+}
+.d-cat-tag{
+  font-size:10px;font-weight:700;
+  background:#dce8f0;color:var(--indigo);
+  padding:2px 9px;border-radius:20px;
+  display:inline-block;margin-bottom:7px;
+}
+.d-name{
+  font-family:'Noto Serif JP',serif;
+  font-size:22px;font-weight:900;color:var(--ink);
+  line-height:1.2;margin-bottom:4px;
+}
+.d-sub{font-size:12px;color:var(--stone);font-weight:500;}
+.d-rating{display:flex;align-items:center;gap:8px;margin-top:8px;}
+.stars{color:var(--gold);font-size:14px;letter-spacing:1px;}
+.rating-num{font-size:13px;font-weight:700;color:var(--ink-mid);}
+.review-ct{font-size:11px;color:var(--stone);}
+
+.d-actions{
+  padding:12px 14px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:8px;
+  background:var(--white);border-bottom:1px solid #ede8e0;
+}
+.abt{
+  display:flex;flex-direction:column;align-items:center;gap:5px;
+  border:1.5px solid #e4ddd0;border-radius:8px;
+  padding:10px 4px;cursor:pointer;background:var(--cream);
+  transition:background .15s;font-family:inherit;
+}
+.abt:active{background:var(--cream2);}
+.abt svg{width:20px;height:20px;stroke:var(--ink-mid);fill:none;stroke-width:1.8;}
+.abt-label{font-size:10px;font-weight:700;color:var(--ink-mid);}
+.abt.hl{background:var(--red);border-color:var(--red-dark);}
+.abt.hl svg{stroke:#fff;}
+.abt.hl .abt-label{color:#fff;}
+
+.d-gmaps{
+  margin:12px 14px;border-radius:10px;overflow:hidden;
+  border:1.5px solid var(--indigo);cursor:pointer;transition:opacity .15s;
+}
+.d-gmaps:active{opacity:.85;}
+.gmaps-inner{
+  background:linear-gradient(135deg,#2e4070 0%,#1c2848 100%);
+  padding:12px 14px;display:flex;align-items:center;gap:10px;
+}
+.gmaps-logo{
+  width:36px;height:36px;border-radius:8px;background:var(--white);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.gmaps-logo svg{width:22px;height:22px;}
+.gmaps-text{flex:1;}
+.gmaps-title{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px;}
+.gmaps-sub{font-size:10px;color:rgba(255,255,255,.6);}
+.gmaps-arrow{color:rgba(255,255,255,.5);font-size:18px;}
+
+.d-info-block{
+  margin:0 14px;background:var(--white);
+  border-radius:10px;border:1px solid #e8e0d0;
+  overflow:hidden;box-shadow:var(--shadow-sm);
+}
+.info-row{
+  display:flex;padding:11px 13px;
+  border-bottom:1px solid #f0ece4;align-items:flex-start;gap:10px;
+}
+.info-row:last-child{border-bottom:none;}
+.info-lbl{font-size:10px;font-weight:700;color:var(--stone);min-width:48px;padding-top:1px;flex-shrink:0;}
+.info-val{font-size:12px;color:var(--ink-mid);font-weight:500;line-height:1.55;}
+.info-val a{color:var(--indigo);text-decoration:underline;}
+
+.d-desc{
+  margin:12px 14px 0;background:var(--white);
+  border-radius:10px;border:1px solid #e8e0d0;
+  padding:13px 14px;box-shadow:var(--shadow-sm);
+}
+.d-desc-title{
+  font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--ink);
+  margin-bottom:8px;padding-bottom:7px;border-bottom:1px solid #f0ece4;
+}
+.d-desc-body{font-size:12px;color:var(--ink-mid);line-height:1.85;}
+
+/* NEARBY */
+.nearby-scroll{
+  display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;
+}
+.nearby-scroll::-webkit-scrollbar{display:none;}
+.nearby-card{
+  min-width:140px;background:var(--white);
+  border-radius:10px;border:1px solid #e0d8c8;
+  overflow:hidden;cursor:pointer;flex-shrink:0;
+  box-shadow:var(--shadow-sm);transition:transform .15s;
+}
+.nearby-card:active{transform:scale(.97);}
+.nearby-thumb{
+  width:100%;height:80px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;color:var(--stone);
+  text-align:center;line-height:1.4;
+}
+.nt1{background:#f8e8e0;}
+.nt2{background:#e0ede8;}
+.nt3{background:#dce4f0;}
+.nearby-info{padding:8px 10px 10px;}
+.nearby-name{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:2px;}
+.nearby-genre{font-size:10px;color:var(--stone);}
+.nearby-dist{font-size:10px;color:var(--ink-light);font-weight:600;margin-top:4px;}
+
+.to-cat-btn{
+  width:100%;background:var(--white);border:1.5px solid #e4ddd0;border-radius:10px;
+  padding:13px;font-family:inherit;font-size:13px;font-weight:700;
+  color:var(--indigo);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.to-cat-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;}
+
+/* ======= CATEGORY PAGE ======= */
+.cat-pg-tabs{
+  display:flex;background:#e4ddd0;padding:4px;gap:3px;margin:12px 14px;border-radius:8px;
+}
+.cptab{
+  flex:1;border:none;border-radius:5px;
+  font-family:inherit;font-size:11px;font-weight:700;
+  padding:8px 4px;cursor:pointer;color:var(--stone);background:none;transition:all .2s;
+}
+.cptab.active{background:var(--white);color:var(--red-dark);box-shadow:var(--shadow-sm);}
+
+.cat-filter{
+  display:flex;gap:7px;margin:0 14px 12px;
+  overflow-x:auto;scrollbar-width:none;padding-bottom:2px;
+}
+.cat-filter::-webkit-scrollbar{display:none;}
+.cfchip{
+  white-space:nowrap;border:1.5px solid #d8d0c4;
+  background:var(--white);border-radius:20px;
+  padding:5px 12px;font-family:inherit;font-size:11px;font-weight:700;
+  color:var(--stone);cursor:pointer;transition:all .2s;flex-shrink:0;
+}
+.cfchip.active{background:var(--red);border-color:var(--red-dark);color:#fff;}
+
+.cat-shop-list{display:flex;flex-direction:column;gap:8px;padding:0 14px;}
+.cat-card{
+  background:var(--white);border:1px solid #e8e0d0;border-radius:10px;
+  overflow:hidden;display:flex;cursor:pointer;
+  box-shadow:var(--shadow-sm);transition:transform .15s;
+}
+.cat-card:active{transform:scale(.98);}
+.cc-thumb{
+  width:90px;height:90px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;color:var(--stone);text-align:center;line-height:1.4;
+}
+.cct1{background:#ede4d4;}
+.cct2{background:#f4e8de;}
+.cct3{background:#dce8e4;}
+.cct4{background:#e4ecd8;}
+.cc-info{flex:1;padding:10px 12px 10px 10px;display:flex;flex-direction:column;justify-content:space-between;}
+.cc-name{font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:2px;}
+.cc-genre{font-size:11px;color:var(--ink-light);margin-bottom:5px;}
+.cc-tags{display:flex;flex-wrap:wrap;gap:4px;}
+.cc-tag{font-size:10px;color:var(--indigo);background:#dce4f0;padding:1px 7px;border-radius:10px;font-weight:600;}
+.cc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:6px;}
+
+/* ======= ANIMS ======= */
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.shop-card{animation:fadeUp .35s ease both;}
+.shop-card:nth-child(1){animation-delay:.04s;}
+.shop-card:nth-child(2){animation-delay:.1s;}
+.shop-card:nth-child(3){animation-delay:.16s;}
 </style>
 </head>
 <body>
-<div class="phone-frame">
+<div class="phone">
 
-<!-- ===================== SCREEN 1: TOP ===================== -->
+<!-- =========================================
+     SCREEN 1: TOP
+========================================= -->
 <div class="screen active" id="s-top">
+
+  <!-- HEADER -->
   <header class="header">
-    <div class="logo-wrap">
+    <div class="logo-block">
       <span class="logo-en">Yomise-dori Shopping Street</span>
-      <span class="logo-jp">よみせ通り商店街</span>
+      <div class="logo-jp">
+        <span class="logo-yo">よ</span><span class="logo-mi">み</span><span class="logo-se">せ</span>
+        <span class="logo-dori">通り</span>
+      </div>
+      <span class="logo-shoten">商店街</span>
     </div>
-    <div class="header-menu"><span></span><span></span><span></span></div>
+    <div class="header-right">
+      <button class="header-lang">EN</button>
+      <button class="header-menu"><span></span><span></span><span></span></button>
+    </div>
   </header>
 
-  <div class="search-area">
+  <!-- HERO -->
+  <div class="hero-wrap">
     <div class="hero-img">
+      <img src="https://machiteku.com/wp-content/uploads/yomise_top4.jpg" alt="よみせ通り商店街" crossorigin="anonymous" id="hero-photo">
       <div class="hero-catch">
-        <strong>谷根千エリアを再発見する</strong>
-        よみせ通りを軸とした谷根千の入口へ
+        <span class="hero-catch-main">谷根千エリアを再発見する</span>
+        <span class="hero-catch-sub">よみせ通りを軸とした谷根千の入口へ</span>
       </div>
     </div>
-    <div style="height:10px;"></div>
-    <div class="search-label-bar">今いるところから探す</div>
+  </div>
+
+  <!-- SEARCH -->
+  <div class="search-wrap">
+    <div class="search-label">今いるところから探す</div>
     <div class="search-btns">
       <button class="sbtn sbtn-loc">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
@@ -779,223 +693,241 @@ body {
     </div>
   </div>
 
-  <!-- MAP -->
-  <div class="map-block">
-    <div class="map-mock">
-      <div class="map-mock-bg"></div>
-      <div class="map-road mr1"></div><div class="map-road mr2"></div>
-      <div class="map-road mr3"></div><div class="map-road mr4"></div>
-      <div class="map-road mr5"></div><div class="map-road mr6"></div>
-      <div class="map-park"></div>
-      <div class="map-block-color mb1"></div><div class="map-block-color mb2"></div><div class="map-block-color mb3"></div>
-      <div class="map-route"><div class="map-route-line"></div></div>
-      <div class="map-pin mp1"></div>
-      <div class="map-pin mp2"></div>
-      <div class="map-pin mp3"></div>
-      <div class="map-station">🚉 日暮里駅</div>
+  <!-- ブロック1: 明るい / MAP + カテゴリ -->
+  <div class="block-light pb16">
+    <!-- MAP -->
+    <div class="map-block">
+      <div class="map-mock">
+        <div class="map-mock-bg"></div>
+        <div class="mroad mr1"></div><div class="mroad mr2"></div>
+        <div class="mroad mr3"></div><div class="mroad mr4"></div><div class="mroad mr5"></div>
+        <div class="mpark"></div>
+        <div class="mroute"><div class="mroute-line"></div></div>
+        <div class="mpin mp1"></div><div class="mpin mp2"></div><div class="mpin mp3"></div>
+        <div class="mstation">🚉 日暮里駅</div>
+      </div>
+      <div class="map-footer">
+        <span class="map-footer-text">よみせ通り周辺エリア</span>
+        <button class="map-open-btn">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Googleマップで開く
+        </button>
+      </div>
     </div>
-    <div class="map-footer">
-      <span class="map-footer-text">よみせ通り周辺エリア</span>
-      <button class="map-open-btn">
-        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        Googleマップで開く
-      </button>
+
+    <!-- CATEGORIES -->
+    <div style="margin-top:18px;">
+      <div class="sect-head">
+        <div class="sect-title-light">カテゴリから探す</div>
+        <a class="sect-more-light" onclick="showScreen('s-cat')">一覧へ ›</a>
+      </div>
+      <div class="cat-grid">
+        <button class="cat-item" onclick="showScreen('s-cat')">
+          <div class="cat-icon ci-food"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+          <span class="cat-label">飲食店<br>カフェ</span>
+        </button>
+        <button class="cat-item" onclick="showScreen('s-cat')">
+          <div class="cat-icon ci-shop"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
+          <span class="cat-label">小売<br>物販</span>
+        </button>
+        <button class="cat-item">
+          <div class="cat-icon ci-svc"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <span class="cat-label">サービス<br>体験</span>
+        </button>
+        <button class="cat-item">
+          <div class="cat-icon ci-place"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+          <span class="cat-label">場所<br>施設</span>
+        </button>
+      </div>
     </div>
   </div>
 
-  <!-- CATEGORIES -->
-  <div class="sect">
+  <!-- ブロック2: 暗い / 目的別おすすめルート -->
+  <div class="block-dark pb20">
     <div class="sect-head">
-      <div class="sect-title">カテゴリから探す</div>
-      <a class="sect-more" onclick="showScreen('s-cat')">一覧へ ›</a>
-    </div>
-    <div class="cat-grid">
-      <button class="cat-item" onclick="showScreen('s-cat')">
-        <div class="cat-icon-wrap ci-food">
-          <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-        </div>
-        <span class="cat-label">飲食店<br>カフェ</span>
-      </button>
-      <button class="cat-item" onclick="showScreen('s-cat')">
-        <div class="cat-icon-wrap ci-shop">
-          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-        </div>
-        <span class="cat-label">小売<br>物販</span>
-      </button>
-      <button class="cat-item">
-        <div class="cat-icon-wrap ci-svc">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-        </div>
-        <span class="cat-label">サービス<br>体験</span>
-      </button>
-      <button class="cat-item">
-        <div class="cat-icon-wrap ci-place">
-          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-        </div>
-        <span class="cat-label">場所<br>施設</span>
-      </button>
-    </div>
-  </div>
-
-  <!-- ROUTES -->
-  <div class="sect" style="margin-top:16px;">
-    <div class="sect-head">
-      <div class="sect-title">おすすめ探索ルート</div>
-      <a class="sect-more">もっと見る ›</a>
+      <div class="sect-title-dark">目的別おすすめルート</div>
+      <a class="sect-more-dark">一覧へ ›</a>
     </div>
     <div class="route-list">
       <div class="route-card">
-        <div class="route-card-icon ri-food">
-          <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>
-        </div>
-        <div class="route-card-body">
-          <div class="route-card-title">食べ歩き30分コース</div>
-          <div class="route-card-desc">名物が凝縮の下町散策を30分で</div>
+        <div class="route-icon ri-eat"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg></div>
+        <div class="route-body">
+          <div class="route-title">谷根千 食べ歩きルート</div>
+          <div class="route-desc">名物グルメを巡る下町散策コース</div>
         </div>
         <span class="route-badge">30分</span>
       </div>
       <div class="route-card">
-        <div class="route-card-icon ri-cafe">
-          <svg viewBox="0 0 24 24"><path d="M17 8h1a4 4 0 010 8h-1M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4z"/></svg>
+        <div class="route-icon ri-walk"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 22v-7l-2-3H6l2-7h8l1 4"/><path d="M14 22v-7l2-2"/></svg></div>
+        <div class="route-body">
+          <div class="route-title">谷根千めぐり 観光ルート</div>
+          <div class="route-desc">カフェ・雑貨・歴史スポットを満喫</div>
         </div>
-        <div class="route-card-body">
-          <div class="route-card-title">カフェ&雑貨めぐり</div>
-          <div class="route-card-desc">個性ある小さくて面白いお店たくさん</div>
-        </div>
-        <span class="route-badge">50分</span>
+        <span class="route-badge">60分</span>
       </div>
       <div class="route-card">
-        <div class="route-card-icon ri-night">
-          <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/></svg>
-        </div>
-        <div class="route-card-body">
-          <div class="route-card-title">夜のはしご酒ルート</div>
-          <div class="route-card-desc">食べ歩きながら歴史散策を楽しむ</div>
+        <div class="route-icon ri-night"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/></svg></div>
+        <div class="route-body">
+          <div class="route-title">夜のはしご酒ルート</div>
+          <div class="route-desc">歴史ある路地を歩きながらお酒を楽しむ</div>
         </div>
         <span class="route-badge">40分</span>
       </div>
+      <div class="route-card">
+        <div class="route-icon ri-access"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div>
+        <div class="route-body">
+          <div class="route-title">アクセス＊目的別ルート</div>
+          <div class="route-desc">日暮里駅 / 千駄木駅 / 車で有料駐車場</div>
+        </div>
+        <span class="route-badge">案内</span>
+      </div>
     </div>
   </div>
 
-  <!-- SHOPS -->
-  <div class="sect" style="margin-top:16px;">
+  <!-- ブロック3: 明るい / ルート内のお店 -->
+  <div class="block-light pb16">
     <div class="sect-head">
-      <div class="sect-title">ルート内のお店</div>
-      <a class="sect-more" onclick="showScreen('s-cat')">一覧へ ›</a>
+      <div class="sect-title-light">ルート内のお店</div>
+      <a class="sect-more-light" onclick="showScreen('s-cat')">店舗一覧 ›</a>
     </div>
     <div class="shop-tabs">
-      <button class="stab active">すべて</button>
-      <button class="stab">飲食</button>
-      <button class="stab">小売</button>
-      <button class="stab">サービス</button>
+      <button class="stab active" onclick="setTab(this)">すべて</button>
+      <button class="stab" onclick="setTab(this)">飲食</button>
+      <button class="stab" onclick="setTab(this)">小売</button>
+      <button class="stab" onclick="setTab(this)">サービス</button>
     </div>
     <div class="shop-list">
       <div class="shop-card" onclick="showScreen('s-detail')">
-        <div class="shop-thumb thumb-waraku">和の器<br>雑貨</div>
+        <div class="shop-thumb st-waraku">和の器<br>雑貨</div>
         <div class="shop-info">
           <div>
             <div class="shop-name-row"><span class="shop-name">谷中 和楽や</span><span class="shop-dist">180m</span></div>
-            <div class="shop-genre">業種：和食器・雑貨</div>
+            <div class="shop-genre">小売・物販 ／ 和食器・雑貨</div>
           </div>
-          <div class="shop-info-bot"><span class="status-open">営業中</span><span class="shop-arrow">›</span></div>
+          <div class="shop-foot"><span class="s-open">営業中</span><span class="shop-arrow">›</span></div>
         </div>
       </div>
       <div class="shop-card">
-        <div class="shop-thumb" style="background:#f0e4d8;">イタリア<br>料理</div>
+        <div class="shop-thumb st-nobi">イタリア<br>料理</div>
         <div class="shop-info">
           <div>
             <div class="shop-name-row"><span class="shop-name">TRATTORIA NOBI</span><span class="shop-dist">250m</span></div>
-            <div class="shop-genre">業種：イタリア料理店</div>
+            <div class="shop-genre">飲食店 ／ イタリア料理</div>
           </div>
-          <div class="shop-info-bot"><span class="status-open">営業中</span><span class="shop-arrow">›</span></div>
+          <div class="shop-foot"><span class="s-open">営業中</span><span class="shop-arrow">›</span></div>
         </div>
       </div>
       <div class="shop-card">
-        <div class="shop-thumb" style="background:#dce4e0;">カフェ<br>喫茶</div>
+        <div class="shop-thumb st-cibi">カフェ<br>喫茶</div>
         <div class="shop-info">
           <div>
             <div class="shop-name-row"><span class="shop-name">CIBI TOKYO</span><span class="shop-dist">400m</span></div>
-            <div class="shop-genre">業種：カフェ・喫茶</div>
+            <div class="shop-genre">飲食店 ／ カフェ・喫茶</div>
           </div>
-          <div class="shop-info-bot"><span class="status-closed">営業時間外</span><span class="shop-arrow">›</span></div>
+          <div class="shop-foot"><span class="s-closed">営業時間外</span><span class="shop-arrow">›</span></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- NEWS -->
-  <div class="sect" style="margin-top:16px;">
+  <!-- ブロック4: 暗い / お知らせ・イベント -->
+  <div class="block-dark2 pb20">
     <div class="sect-head">
-      <div class="sect-title">お知らせ・イベント</div>
-      <a class="sect-more">もっと見る ›</a>
+      <div class="sect-title-dark">お知らせ・イベント</div>
+      <a class="sect-more-dark">もっと見る ›</a>
     </div>
     <div class="news-block">
       <div class="news-row"><span class="news-date">2026/02/09</span><span class="ntag nt-new">NEW</span><span class="news-title">「谷中 和楽や」が商店街HPに参加しました</span></div>
-      <div class="news-row"><span class="news-date">2026/01/07</span><span class="ntag nt-event">イベント</span><span class="news-title">よみせ通り春の手作り市を開催予定</span></div>
+      <div class="news-row"><span class="news-date">2026/01/07</span><span class="ntag nt-event">イベント</span><span class="news-title">よみせ通り 春の手作り市を開催予定</span></div>
       <div class="news-row"><span class="news-date">2026/01/04</span><span class="ntag nt-info">お知らせ</span><span class="news-title">年始の営業時間についてのご案内</span></div>
     </div>
   </div>
 
+  <!-- ブロック5: 明るい / 商店街について -->
+  <div class="block-light pb16">
+    <div class="sect-head">
+      <div class="sect-title-light">商店街について</div>
+      <a class="sect-more-light">詳しく ›</a>
+    </div>
+    <div style="background:var(--white);border-radius:10px;border:1px solid #e8e0d0;padding:14px;box-shadow:var(--shadow-sm);font-size:12px;color:var(--ink-mid);line-height:1.85;">
+      よみせ通り商店街は東京・谷中〜千駄木〜根津エリアにある大正期から続く商店街です。新旧の店が共存し、地元の方から海外観光客まで多くの方に愛される下町の魅力あふれる通りです。
+    </div>
+  </div>
+
   <footer class="footer">
-    <div class="footer-logo">よみせ通り商店街 <span class="footer-logo-sub">Yomise-dori Shopping Street</span></div>
+    <div class="footer-logo">
+      よみせ通り商店街
+      <span class="footer-logo-sub">Yomise-dori Shopping Street</span>
+    </div>
     <div class="footer-links">
-      <span class="flink">商店街について</span><span class="flink">店舗一覧</span><span class="flink">飲食</span><span class="flink">食品・惣菜</span><span class="flink">雑貨・工芸</span><span class="flink">服飾・小物</span><span class="flink">サービス</span><span class="flink">アクセス・マップ</span><span class="flink">観光・楽しみ方</span><span class="flink">お知らせ・イベント</span><span class="flink">お問い合わせ</span><span class="flink">EN（英語）</span>
+      <span class="flink">商店街について</span>
+      <span class="flink">店舗一覧</span>
+      <span class="flink">飲食店・カフェ</span>
+      <span class="flink">小売・物販</span>
+      <span class="flink">サービス・体験</span>
+      <span class="flink">場所・施設</span>
+      <span class="flink">目的別おすすめルート</span>
+      <span class="flink">アクセス</span>
+      <span class="flink">お知らせ・イベント</span>
+      <span class="flink">お問い合わせ</span>
+      <span class="flink">EN（英語）</span>
     </div>
     <div class="footer-copy">©2026 よみせ通り商店街</div>
   </footer>
 </div>
 
-<!-- ===================== SCREEN 2: SHOP DETAIL ===================== -->
+<!-- =========================================
+     SCREEN 2: SHOP DETAIL (谷中 和楽や)
+========================================= -->
 <div class="screen" id="s-detail">
   <header class="header">
     <button class="header-back" onclick="showScreen('s-top')">
       <svg viewBox="0 0 24 24"><polyline points="15,18 9,12 15,6"/></svg>
       戻る
     </button>
-    <div class="header-menu"><span></span><span></span><span></span></div>
+    <div style="font-family:'Noto Serif JP',serif;font-size:13px;font-weight:700;color:var(--ink-mid);">店舗詳細</div>
+    <div style="width:34px;"></div>
   </header>
 
-  <!-- HERO -->
   <div class="detail-hero">
-    <span style="font-size:52px; z-index:1; position:relative;">🏺</span>
-    <div class="detail-hero-badge"><span class="badge-dot"></span>営業中</div>
+    <span class="detail-hero-bg-text">和の器</span>
+    <span class="detail-hero-icon">🏺</span>
+    <div class="detail-hero-badge"><span class="badge-open"></span>営業中</div>
   </div>
 
-  <!-- SHOP HEADER -->
-  <div class="detail-header">
-    <span class="detail-cat-tag">小売・物販 ／ 和食器・雑貨</span>
-    <div class="detail-name">谷中 和楽や</div>
-    <div class="detail-sub">よみせ通り商店街加盟店</div>
-    <div class="detail-rating">
+  <div class="detail-head">
+    <span class="d-cat-tag">小売・物販 ／ 和食器・雑貨</span>
+    <div class="d-name">谷中 和楽や</div>
+    <div class="d-sub">よみせ通り商店街加盟店</div>
+    <div class="d-rating">
       <span class="stars">★★★★☆</span>
       <span class="rating-num">4.2</span>
-      <span class="review-count">（Google口コミ）</span>
+      <span class="review-ct">（Google口コミ）</span>
     </div>
   </div>
 
-  <!-- ACTIONS -->
-  <div class="detail-actions">
-    <button class="act-btn highlight">
+  <div class="d-actions">
+    <button class="abt hl">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-      <span class="act-label">経路案内</span>
+      <span class="abt-label">経路案内</span>
     </button>
-    <button class="act-btn">
+    <button class="abt">
       <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.77 19.79 19.79 0 01.1 1.1 2 2 0 012.1 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.1 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-      <span class="act-label">電話する</span>
+      <span class="abt-label">電話する</span>
     </button>
-    <button class="act-btn">
-      <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-      <span class="act-label">シェア</span>
+    <button class="abt">
+      <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      <span class="abt-label">シェア</span>
     </button>
   </div>
 
-  <!-- GOOGLE MAPS LINK -->
-  <div class="detail-gmaps" onclick="window.open('https://www.google.com/maps/place/%E8%B0%B7%E4%B8%AD+%E5%92%8C%E6%A5%BD%E3%82%84/@35.7290302,139.7643794,17z','_blank')">
+  <!-- Google Maps リンク (実際のビジネスプロフィールURL) -->
+  <div class="d-gmaps" onclick="window.open('https://www.google.com/maps/place/%E8%B0%B7%E4%B8%AD+%E5%92%8C%E6%A5%BD%E3%82%84/@35.7290302,139.7643794,17z','_blank')">
     <div class="gmaps-inner">
       <div class="gmaps-logo">
         <svg viewBox="0 0 24 24" width="22" height="22">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#e74c3c"/>
-          <path d="M12 2v7.5" stroke="#2c3e50" stroke-width="1" fill="none"/>
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#e74c3c"/>
+          <circle cx="12" cy="9" r="2.5" fill="white"/>
         </svg>
       </div>
       <div class="gmaps-text">
@@ -1006,41 +938,27 @@ body {
     </div>
   </div>
 
-  <!-- INFO TABLE -->
-  <div class="sect" style="margin-top:12px;">
-    <div class="detail-info-block">
-      <div class="info-row">
-        <span class="info-label">住所</span>
-        <span class="info-val">東京都台東区谷中3丁目<br>よみせ通り沿い</span>
-      </div>
-      <div class="info-row">
-        <span class="info-label">営業時間</span>
-        <span class="info-val">11:00〜18:00<br><span style="color:var(--stone);font-size:11px;">※臨時休業はSNSでお知らせ</span></span>
-      </div>
-      <div class="info-row">
-        <span class="info-label">定休日</span>
-        <span class="info-val">月曜日・火曜日</span>
-      </div>
-      <div class="info-row">
-        <span class="info-label">電話</span>
-        <span class="info-val"><a href="tel:0338220000">03-XXXX-XXXX</a></span>
-      </div>
-      <div class="info-row">
-        <span class="info-label">ウェブ</span>
-        <span class="info-val"><a href="https://warakuya.info" target="_blank">warakuya.info</a></span>
-      </div>
+  <div style="padding:0 14px;">
+    <div class="d-info-block">
+      <div class="info-row"><span class="info-lbl">住所</span><span class="info-val">東京都台東区谷中3丁目<br>よみせ通り沿い</span></div>
+      <div class="info-row"><span class="info-lbl">営業時間</span><span class="info-val">11:00〜18:00<br><span style="font-size:11px;color:var(--stone);">臨時休業はSNSでお知らせ</span></span></div>
+      <div class="info-row"><span class="info-lbl">定休日</span><span class="info-val">月曜日・火曜日</span></div>
+      <div class="info-row"><span class="info-lbl">電話</span><span class="info-val"><a href="tel:0338220000">03-XXXX-XXXX</a></span></div>
+      <div class="info-row"><span class="info-lbl">ウェブ</span><span class="info-val"><a href="https://warakuya.info" target="_blank">warakuya.info</a></span></div>
     </div>
   </div>
 
-  <!-- DESCRIPTION -->
-  <div class="detail-desc">
-    <div class="detail-desc-title">お店について</div>
-    <div class="detail-desc-body">店主自らが厳選した和の器のセレクトショップ。日本の伝統工芸の技に裏打ちされた本物の美しさと品質を持つ品々を取り揃えています。<br><br>信楽焼・秋田の曲げわっぱ・輪島塗・山中漆器・美濃焼など、毎日使える・一生使える・後世まで受け継いでいける逸品に出会えます。</div>
+  <div class="d-desc">
+    <div class="d-desc-title">お店について</div>
+    <div class="d-desc-body">店主自らが厳選した和の器のセレクトショップ。日本の伝統工芸の技に裏打ちされた本物の美しさと品質を持つ品々を取り揃えています。<br><br>信楽焼・秋田の曲げわっぱ・輪島塗・山中漆器・美濃焼など、毎日使える・一生使える・後世まで受け継いでいける逸品ばかりです。</div>
   </div>
 
-  <!-- NEARBY SHOPS -->
-  <div class="sect" style="margin-top:18px; padding-bottom:4px;">
-    <div class="nearby-title">このエリアの他のお店</div>
+  <!-- 近隣お店 (ウォームベージュブロック) -->
+  <div class="block-dark" style="margin-top:16px;">
+    <div class="sect-head">
+      <div class="sect-title-dark">このエリアの他のお店</div>
+      <a class="sect-more-dark" onclick="showScreen('s-cat')">一覧へ ›</a>
+    </div>
     <div class="nearby-scroll">
       <div class="nearby-card" onclick="showScreen('s-top')">
         <div class="nearby-thumb nt1">TRATTORIA<br>NOBI</div>
@@ -1067,186 +985,162 @@ body {
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- MORE CATEGORY -->
-  <div class="sect" style="margin-top:14px; padding-bottom:4px;">
-    <button style="width:100%;background:var(--white);border:1.5px solid var(--cream-dark);border-radius:8px;padding:13px;font-family:inherit;font-size:13px;font-weight:700;color:var(--indigo);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;" onclick="showScreen('s-cat')">
-      <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-      「小売・物販」カテゴリの他のお店を見る
-    </button>
+    <div style="margin-top:14px;padding-bottom:4px;">
+      <button class="to-cat-btn" onclick="showScreen('s-cat')">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        「小売・物販」カテゴリの他のお店を見る
+      </button>
+    </div>
+    <div style="height:6px;"></div>
   </div>
-  <div style="height:16px;"></div>
 </div>
 
-<!-- ===================== SCREEN 3: CATEGORY ===================== -->
+<!-- =========================================
+     SCREEN 3: CATEGORY
+========================================= -->
 <div class="screen" id="s-cat">
   <header class="header">
     <button class="header-back" onclick="showScreen('s-top')">
       <svg viewBox="0 0 24 24"><polyline points="15,18 9,12 15,6"/></svg>
       トップへ
     </button>
-    <div class="logo-wrap">
-      <span class="logo-jp" style="font-size:16px;">カテゴリ一覧</span>
-    </div>
-    <div class="header-menu"><span></span><span></span><span></span></div>
+    <div style="font-family:'Noto Serif JP',serif;font-size:14px;font-weight:700;color:var(--ink-mid);">店舗一覧</div>
+    <div style="width:34px;"></div>
   </header>
 
-  <div class="cat-page-tabs">
-    <button class="cptab active">すべて</button>
-    <button class="cptab">飲食</button>
-    <button class="cptab">小売</button>
-    <button class="cptab">サービス</button>
+  <div class="cat-pg-tabs">
+    <button class="cptab active" onclick="setCPTab(this)">すべて</button>
+    <button class="cptab" onclick="setCPTab(this)">飲食</button>
+    <button class="cptab" onclick="setCPTab(this)">小売</button>
+    <button class="cptab" onclick="setCPTab(this)">サービス</button>
   </div>
 
-  <div class="cat-filter-row">
-    <button class="cfchip active">すべて</button>
-    <button class="cfchip">和食器・雑貨</button>
-    <button class="cfchip">イタリア料理</button>
-    <button class="cfchip">カフェ</button>
-    <button class="cfchip">精肉店</button>
-    <button class="cfchip">パン</button>
+  <div class="cat-filter">
+    <button class="cfchip active" onclick="setChip(this)">すべて</button>
+    <button class="cfchip" onclick="setChip(this)">和食器・雑貨</button>
+    <button class="cfchip" onclick="setChip(this)">イタリア料理</button>
+    <button class="cfchip" onclick="setChip(this)">カフェ</button>
+    <button class="cfchip" onclick="setChip(this)">精肉店</button>
   </div>
 
-  <div class="cat-shop-list">
-    <div class="cat-shop-card" onclick="showScreen('s-detail')">
-      <div class="csc-thumb csct1">和の器<br>雑貨</div>
-      <div class="csc-info">
-        <div>
-          <div class="csc-name">谷中 和楽や</div>
-          <div class="csc-genre">小売・物販 ／ 和食器・雑貨</div>
-          <div class="csc-tags">
-            <span class="csc-tag">信楽焼</span>
-            <span class="csc-tag">曲げわっぱ</span>
-            <span class="csc-tag">伝統工芸</span>
+  <!-- 明るいブロック -->
+  <div class="block-light" style="padding-top:4px;">
+    <div class="cat-shop-list">
+      <div class="cat-card" onclick="showScreen('s-detail')">
+        <div class="cc-thumb cct1">和の器<br>雑貨</div>
+        <div class="cc-info">
+          <div>
+            <div class="cc-name">谷中 和楽や</div>
+            <div class="cc-genre">小売・物販 ／ 和食器・雑貨</div>
+            <div class="cc-tags"><span class="cc-tag">信楽焼</span><span class="cc-tag">曲げわっぱ</span><span class="cc-tag">伝統工芸</span></div>
           </div>
-        </div>
-        <div class="csc-foot">
-          <span class="status-open">営業中</span>
-          <span style="font-size:10px;color:var(--stone);">180m ›</span>
+          <div class="cc-foot"><span class="s-open">営業中</span><span style="font-size:10px;color:var(--stone);">180m ›</span></div>
         </div>
       </div>
-    </div>
-
-    <div class="cat-shop-card">
-      <div class="csc-thumb csct2">イタリア<br>料理</div>
-      <div class="csc-info">
-        <div>
-          <div class="csc-name">TRATTORIA NOBI</div>
-          <div class="csc-genre">飲食店 ／ イタリア料理店</div>
-          <div class="csc-tags">
-            <span class="csc-tag">パスタ</span>
-            <span class="csc-tag">ランチ</span>
+      <div class="cat-card">
+        <div class="cc-thumb cct2">イタリア<br>料理</div>
+        <div class="cc-info">
+          <div>
+            <div class="cc-name">TRATTORIA NOBI</div>
+            <div class="cc-genre">飲食店 ／ イタリア料理店</div>
+            <div class="cc-tags"><span class="cc-tag">パスタ</span><span class="cc-tag">ランチ</span></div>
           </div>
-        </div>
-        <div class="csc-foot">
-          <span class="status-open">営業中</span>
-          <span style="font-size:10px;color:var(--stone);">250m ›</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="cat-shop-card">
-      <div class="csc-thumb csct3">カフェ<br>喫茶</div>
-      <div class="csc-info">
-        <div>
-          <div class="csc-name">CIBI TOKYO</div>
-          <div class="csc-genre">飲食店 ／ カフェ・喫茶</div>
-          <div class="csc-tags">
-            <span class="csc-tag">メルボルン発</span>
-            <span class="csc-tag">グルテンフリー</span>
-          </div>
-        </div>
-        <div class="csc-foot">
-          <span class="status-closed">営業時間外</span>
-          <span style="font-size:10px;color:var(--stone);">400m ›</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="cat-shop-card">
-      <div class="csc-thumb csct4">精肉</div>
-      <div class="csc-info">
-        <div>
-          <div class="csc-name">千駄木 腰塚</div>
-          <div class="csc-genre">飲食・物販 ／ 精肉店</div>
-          <div class="csc-tags">
-            <span class="csc-tag">コンビーフ</span>
-            <span class="csc-tag">惣菜</span>
-          </div>
-        </div>
-        <div class="csc-foot">
-          <span class="status-open">営業中</span>
-          <span style="font-size:10px;color:var(--stone);">680m ›</span>
+          <div class="cc-foot"><span class="s-open">営業中</span><span style="font-size:10px;color:var(--stone);">250m ›</span></div>
         </div>
       </div>
     </div>
   </div>
-  <div style="height:16px;"></div>
+
+  <!-- ウォームベージュブロック -->
+  <div class="block-dark" style="padding-top:16px;">
+    <div class="cat-shop-list">
+      <div class="cat-card">
+        <div class="cc-thumb cct3">カフェ<br>喫茶</div>
+        <div class="cc-info">
+          <div>
+            <div class="cc-name">CIBI TOKYO</div>
+            <div class="cc-genre">飲食店 ／ カフェ・喫茶</div>
+            <div class="cc-tags"><span class="cc-tag">グルテンフリー</span><span class="cc-tag">メルボルン発</span></div>
+          </div>
+          <div class="cc-foot"><span class="s-closed">営業時間外</span><span style="font-size:10px;color:var(--stone);">400m ›</span></div>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cc-thumb" style="background:#f0e8d4;width:90px;height:90px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--stone);text-align:center;line-height:1.4;flex-shrink:0;">精肉</div>
+        <div class="cc-info">
+          <div>
+            <div class="cc-name">千駄木 腰塚</div>
+            <div class="cc-genre">飲食・物販 ／ 精肉店</div>
+            <div class="cc-tags"><span class="cc-tag">コンビーフ</span><span class="cc-tag">惣菜</span></div>
+          </div>
+          <div class="cc-foot"><span class="s-open">営業中</span><span style="font-size:10px;color:var(--stone);">680m ›</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="height:20px;"></div>
+  </div>
 </div>
 
-<!-- ===================== BOTTOM NAV ===================== -->
+<!-- ======= BOTTOM NAV ======= -->
 <nav class="bottom-nav">
-  <button class="nav-btn active" id="nav-top" onclick="showScreen('s-top'); setNav('nav-top')">
-    <div class="nav-icon-wrap">
-      <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-    </div>
+  <button class="nav-btn active" id="nav-top" onclick="showScreen('s-top');setNav('nav-top')">
+    <div class="nav-iw"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
     <span class="nav-lbl">トップ</span>
   </button>
   <button class="nav-btn" id="nav-map" onclick="setNav('nav-map')">
-    <div class="nav-icon-wrap">
-      <svg viewBox="0 0 24 24"><polygon points="1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-    </div>
+    <div class="nav-iw"><svg viewBox="0 0 24 24"><polygon points="1,6 1,22 8,18 16,22 23,18 23,2 16,6 8,2"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></div>
     <span class="nav-lbl">マップ</span>
   </button>
-  <button class="nav-btn" id="nav-cat" onclick="showScreen('s-cat'); setNav('nav-cat')">
-    <div class="nav-icon-wrap">
-      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-    </div>
+  <button class="nav-btn" id="nav-cat" onclick="showScreen('s-cat');setNav('nav-cat')">
+    <div class="nav-iw"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
     <span class="nav-lbl">カテゴリー</span>
   </button>
   <button class="nav-btn" id="nav-news" onclick="setNav('nav-news')">
-    <div class="nav-icon-wrap">
-      <svg viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
-    </div>
+    <div class="nav-iw"><svg viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
     <span class="nav-lbl">ニュース</span>
   </button>
 </nav>
 
-</div><!-- /phone-frame -->
+</div>
 
 <script>
-function showScreen(id) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  document.getElementById(id).scrollTop = 0;
-  // sync nav
-  if (id === 's-top') setNav('nav-top');
-  if (id === 's-cat') setNav('nav-cat');
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  const el=document.getElementById(id);
+  el.classList.add('active');
+  el.scrollTop=0;
+  if(id==='s-top') setNav('nav-top');
+  if(id==='s-cat') setNav('nav-cat');
 }
-function setNav(id) {
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+function setNav(id){
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
-// Tab interactions
-document.querySelectorAll('.stab').forEach(t => {
-  t.addEventListener('click', function() {
-    this.closest('.shop-tabs').querySelectorAll('.stab').forEach(x => x.classList.remove('active'));
-    this.classList.add('active');
-  });
-});
-document.querySelectorAll('.cptab').forEach(t => {
-  t.addEventListener('click', function() {
-    this.closest('.cat-page-tabs').querySelectorAll('.cptab').forEach(x => x.classList.remove('active'));
-    this.classList.add('active');
-  });
-});
-document.querySelectorAll('.cfchip').forEach(c => {
-  c.addEventListener('click', function() {
-    document.querySelectorAll('.cfchip').forEach(x => x.classList.remove('active'));
-    this.classList.add('active');
-  });
-});
+function setTab(el){
+  el.closest('.shop-tabs').querySelectorAll('.stab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+}
+function setCPTab(el){
+  el.closest('.cat-pg-tabs').querySelectorAll('.cptab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+}
+function setChip(el){
+  document.querySelectorAll('.cfchip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// 画像をproxyまたはcanvas経由でbase64化して差し替え
+(function(){
+  const img = document.getElementById('hero-photo');
+  const proxyUrl = 'https://images.weserv.nl/?url=' + encodeURIComponent('machiteku.com/wp-content/uploads/yomise_top4.jpg') + '&w=800&h=400&t=squarespace&a=top&q=85';
+  img.onerror = function(){
+    // フォールバック: 谷中エリアのUnsplash画像
+    this.src = 'https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=800&q=80';
+    this.onerror = null;
+  };
+  img.src = proxyUrl;
+})();
 </script>
 </body>
 </html>
